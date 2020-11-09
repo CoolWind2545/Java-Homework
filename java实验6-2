@@ -1,0 +1,37 @@
+public interface InterfaceA {
+    int method(int n);
+}
+
+public class ClassA implements InterfaceA{
+    //计算和
+    @Override
+    public int method(int n) {
+        if (n == 1) {
+            return 1;
+        } else {
+            return n + method(n - 1);
+        }
+    }
+}
+
+public class ClassB implements InterfaceA{
+    @Override
+    public int method(int n) {
+        if (n == 1) {
+            return 1;
+        } else {
+            return n * method(n - 1);
+        }
+    }
+}
+
+public class E {
+    public static void main(String[] args) {
+        InterfaceA a=new ClassA();
+        int num1 = a.method(10);
+        System.out.println(num1);
+        InterfaceA b=new ClassB();
+        int num2=b.method(6);
+        System.out.println(num2);
+    }
+}
