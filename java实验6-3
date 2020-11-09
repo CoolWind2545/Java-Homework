@@ -1,0 +1,37 @@
+public class WuMingFen {
+    String theMa;
+    int quantity;
+    boolean likeSoup;
+
+    public WuMingFen(String theMa, int quantity, boolean likeSoup) {
+        this.theMa = theMa;
+        this.quantity = quantity;
+        this.likeSoup = likeSoup;
+    }
+
+    public WuMingFen(String theMa, int quantity) {
+        this.theMa = theMa;
+        this.quantity = quantity;
+    }
+
+    public WuMingFen() {
+        this.theMa = "酸辣面";
+        this.quantity = 2;
+        this.likeSoup = true;
+    }
+
+    public void check(){
+        System.out.println(this.theMa);
+        System.out.println(this.quantity);
+        System.out.println(this.likeSoup);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        WuMingFen w=new WuMingFen();
+        w.check();
+        WuMingFen w2=new WuMingFen("面条",3,false);
+        w2.check();
+    }
+}
