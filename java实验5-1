@@ -1,0 +1,28 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Number {
+    //产生一个1~100之间的随机数
+    //static int v=new Random().nextInt(100)+1;
+    int v=new Random().nextInt(100)+1;
+}
+
+public class NumberTest extends Number {
+    public static void main(String[] args) {
+        Number number = new Number();
+        System.out.println();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入您猜的数字：");
+        while(true){
+            int num=sc.nextInt();
+            if(num==number.v){
+                System.out.println("猜中了");
+                break;
+            }else if(num>number.v){
+                System.out.println("猜大了,请重新输入：");
+            }else{
+                    System.out.println("猜小了,请重新输入：");
+            }
+        }
+    }
+}
