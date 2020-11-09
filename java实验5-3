@@ -1,0 +1,40 @@
+public abstract class Vehicle {
+    public String NoOfWheels() {
+        return null;
+    }
+}
+
+public class Car extends Vehicle{
+    String name;
+
+    public Car(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String NoOfWheels() {
+        return this.name;
+    }
+}
+
+public class Motorbike extends Vehicle {
+    String name;
+
+    public Motorbike(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String NoOfWheels() {
+        return this.name;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        Car c=new Car("四轮车");
+        System.out.println(c.NoOfWheels());
+        Motorbike m=new Motorbike("双轮车");
+        System.out.println(m.NoOfWheels());
+    }
+}
