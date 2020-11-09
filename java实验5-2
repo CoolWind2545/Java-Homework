@@ -1,0 +1,47 @@
+public interface CanFly {
+    void fly();
+    void makeFly();
+}
+
+public class Bird implements CanFly {
+    String name;
+
+    @Override
+    public void fly() {
+        System.out.println(name + "现在可以飞了");
+    }
+
+    @Override
+    public void makeFly() {
+        System.out.println("我要让" + name + "会飞了");
+    }
+}
+
+public class Plane implements CanFly {
+    String name;
+
+    @Override
+    public void fly() {
+        System.out.println(name + "现在可以飞了");
+    }
+
+    @Override
+    public void makeFly() {
+        System.out.println("我要让" + name + "会飞了");
+    }
+}
+
+public class FlyTest {
+    public static void main(String[] args) {
+        Bird b=new Bird();
+        b.name="麻雀";
+        b.makeFly();
+        b.fly();
+
+        Plane p=new Plane();
+        p.name="歼20";
+        p.makeFly();
+        p.fly();
+    }
+}
+
