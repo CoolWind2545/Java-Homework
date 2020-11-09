@@ -1,0 +1,55 @@
+public interface Compute {
+    int computer(int m, int n);
+}
+
+public class UseCompute {
+    public void useCom(Compute com, int one, int two) {
+        System.out.println(com.computer(one, two));
+    }
+}
+
+public class Add implements Compute {
+    @Override
+    public int computer(int m, int n) {
+        return m + n;
+    }
+}
+
+public class Jian implements Compute {
+    @Override
+    public int computer(int m, int n) {
+        return m - n;
+    }
+}
+
+public class Cheng implements Compute {
+    @Override
+    public int computer(int m, int n) {
+        return m * n;
+    }
+}
+
+public class Chu implements Compute {
+    @Override
+    public int computer(int m, int n) {
+        return m / n;
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        UseCompute u = new UseCompute();
+        //加法实现
+        Compute a = new Add();
+        u.useCom(a, 10, 20);
+        //减法实现
+        Compute b = new Jian();
+        u.useCom(b, 20, 5);
+        //乘法实现
+        Compute c = new Cheng();
+        u.useCom(c, 5, 6);
+        //除法实现
+        Compute d = new Chu();
+        u.useCom(d, 50, 10);
+    }
+}
