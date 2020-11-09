@@ -1,0 +1,37 @@
+package com.a;
+public class A {
+    public int add(int m) {
+        if (m == 1) {
+            return 1;
+        } else {
+            return m + add(m - 1);
+        }
+    }
+}
+
+package com.b;
+public class B {
+    public int cheng(int n) {
+        if (n == 1) {
+            return 1;
+        } else {
+            return n * cheng(n - 1);
+        }
+    }
+}
+
+import com.a.A;
+import com.b.B;
+public class C {
+    public static void main(String[] args) {
+        A a1 = new A();
+        int num = a1.add(10);
+        System.out.println(num);
+        B b1 = new B();
+        int num2 = 0;
+        for (int i = 1; i <= 10; i++) {
+            num2 += b1.cheng(i);
+        }
+        System.out.println(num2);
+    }
+}
